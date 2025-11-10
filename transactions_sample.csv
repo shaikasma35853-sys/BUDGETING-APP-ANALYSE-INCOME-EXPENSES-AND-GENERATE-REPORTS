@@ -1,0 +1,19 @@
+date,description,amount,type,category
+2025-09-01,September Salary,75000,income,Salary
+2025-09-02,Metro card top-up,800,expense,Transport
+2025-09-03,Rent,18000,expense,Rent
+2025-09-05,Groceries - local mart,3200,expense,Groceries
+2025-09-08,Dinner with friends,1200,expense,Dining
+2025-09-12,Electricity bill,2100,expense,Utilities
+2025-10-01,October Salary,75000,income,Salary
+2025-10-03,Groceries - BigBazaar,4100,expense,Groceries
+2025-10-06,Pharmacy,650,expense,Health
+2025-10-10,Movie night,700,expense,Entertainment
+2025-10-14,Cab ride,340,expense,Transport
+2025-10-28,Diwali bonus,15000,income,Bonus
+2025-11-01,November Salary,75000,income,Salary
+2025-11-02,Rent,18000,expense,Rent
+2025-11-03,Groceries - Reliance,2900,expense,Groceries
+2025-11-04,Prepaid mobile recharge,399,expense,Utilities
+2025-11-05,Lunch - office cafeteria,220,expense,Dining
+2025-11-05,Bus pass,600,expense,Transport

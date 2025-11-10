@@ -1,0 +1,44 @@
+date,description,amount,type,category
+2025-09-01,September Salary,75000,income,Salary
+2025-09-02,Metro card top-up,800,expense,Transport
+2025-09-03,Rent,18000,expense,Rent
+2025-09-05,Groceries - local mart,3200,expense,Groceries
+2025-09-08,Dinner with friends,1200,expense,Dining
+2025-09-12,Electricity bill,2100,expense,Utilities
+2025-10-01,October Salary,75000,income,Salary
+2025-10-03,Groceries - BigBazaar,4100,expense,Groceries
+2025-10-06,Pharmacy,650,expense,Health
+2025-10-10,Movie night,700,expense,Entertainment
+2025-10-14,Cab ride,340,expense,Transport
+2025-10-28,Diwali bonus,15000,income,Bonus
+2025-11-01,November Salary,75000,income,Salary
+2025-11-02,Rent,18000,expense,Rent
+2025-11-03,Groceries - Reliance,2900,expense,Groceries
+2025-11-04,Prepaid mobile recharge,399,expense,Utilities
+2025-11-05,Lunch - office cafeteria,220,expense,Dining
+2025-11-05,Bus pass,600,expense,Transport
+2025-11-06,Streaming subscription,499,expense,Entertainment
+2025-11-07,Groceries - fruits/veg,850,expense,Groceries
+2025-11-08,Clinic visit,900,expense,Health
+2025-11-09,Auto fare,180,expense,Transport
+2025-11-10,Cafe coffee,150,expense,Dining
+2025-11-11,Water bill,300,expense,Utilities
+2025-11-12,Groceries - staples,2100,expense,Groceries
+2025-11-13,Snacks,120,expense,Dining
+2025-11-14,Fuel,1300,expense,Transport
+2025-11-15,Dinner - takeaway,700,expense,Dining
+2025-11-16,Internet bill,899,expense,Utilities
+2025-11-17,Groceries - dairy,460,expense,Groceries
+2025-11-18,Pharmacy - supplements,750,expense,Health
+2025-11-19,Local train pass,350,expense,Transport
+2025-11-20,Birthday gift,1500,expense,Misc
+2025-11-21,Groceries - weekend stock,2500,expense,Groceries
+2025-11-22,Gym membership,2000,expense,Health
+2025-11-23,Lunch - dine-in,560,expense,Dining
+2025-11-24,OTT annual cashback,500,income,Bonus
+2025-11-25,Electricity surcharge,250,expense,Utilities
+2025-11-26,Groceries - refill,1300,expense,Groceries
+2025-11-27,Auto fare,160,expense,Transport
+2025-11-28,Snacks - bakery,180,expense,Dining
+2025-11-29,Movie + snacks,980,expense,Entertainment
+2025-11-30,Side project payout,6000,income,Income

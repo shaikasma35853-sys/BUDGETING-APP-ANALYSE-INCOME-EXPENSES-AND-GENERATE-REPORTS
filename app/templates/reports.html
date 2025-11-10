@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h4>Reports</h4>
+{% if not periods %}
+  <p class="text-muted">No data yet. Add transactions to see reports.</p>
+{% else %}
+  <div class="list-group">
+    {% for p in periods %}
+      <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" href="{{ url_for('core.report_view', period=p) }}">
+        {{ p }} <span class="small text-muted">View & Export</span>
+      </a>
+    {% endfor %}
+  </div>
+{% endif %}
+{% endblock %}

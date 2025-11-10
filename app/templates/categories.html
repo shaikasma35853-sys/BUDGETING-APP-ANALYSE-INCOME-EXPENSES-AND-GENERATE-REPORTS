@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+  <div class="col-md-6">
+    <h4>Categories</h4>
+    <table class="table table-sm table-hover">
+      <thead class="table-light"><tr><th>Name</th><th>Type</th><th></th></tr></thead>
+      <tbody>
+        {% for c in categories %}
+        <tr>
+          <td>{{ c.name }}</td>
+          <td><span class="badge bg-{{ 'success' if c.type=='income' else 'danger' }}">{{ c.type }}</span></td>
+          <td class="text-end"><a class="btn btn-sm btn-outline-danger" href="{{ url_for('core.categories_delete', cid=c.id) }}" onclick="return confirm('Delete?')">Delete</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <h4>Add Category</h4>
+    <form method="post" class="row g-3">
+      <div class="col-md-7"><label class="form-label">Name</label><input name="name" class="form-control" required></div>
+      <div class="col-md-5"><label class="form-label">Type</label>
+        <select name="type" class="form-select"><option value="expense">Expense</option><option value="income">Income</option></select>
+      </div>
+      <div class="col-12"><button class="btn btn-primary">Add</button></div>
+    </form>
+  </div>
+</div>
+{% endblock %}

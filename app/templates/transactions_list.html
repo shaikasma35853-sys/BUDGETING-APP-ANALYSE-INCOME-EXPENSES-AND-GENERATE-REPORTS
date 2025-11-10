@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="d-flex align-items-center mb-3 flex-wrap gap-2">
+  <h4 class="me-auto">Transactions</h4>
+  <input id="txnSearch" class="form-control w-auto" placeholder="Search description or category">
+  <a class="btn btn-outline-secondary me-2" href="{{ url_for('core.transactions_export_csv') }}">Export CSV</a>
+  <button class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#importModal">Import CSV</button>
+  <a class="btn btn-primary" href="{{ url_for('core.transactions_add') }}">Add</a>
+</div>
+
+<table id="txnTable" class="table table-hover table-sm align-middle">
+  <thead class="table-light"><tr><th>Date</th><th>Description</th><th>Category</th><th class="text-end">Amount</th><th></th></tr></thead>
+  <tbody>
+    {% for t in txns %}
+    {% set c = (categories|selectattr('id', 'equalto', t.category_id)|list)[0] %}
+    <tr>
+      <td>{{ t.date.strftime('%Y-%m-%d') }}</td>
+      <td>{{ t.description }}</td>
+      <td><span class="badge bg-{{ 'success' if c.type=='income' else 'danger' }}">{{ c.name }}</span></td>
+      <td class="text-end">{{ '%.2f'|format(t.amount) }}</td>
+      <td class="text-end">
+        <a class="btn btn-sm btn-outline-secondary" href="{{ url_for('core.transactions_edit', txn_id=t.id) }}">Edit</a>
+        <a class="btn btn-sm btn-outline-danger" href="{{ url_for('core.transactions_delete', txn_id=t.id) }}" onclick="return confirm('Delete?')">Delete</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<div class="modal fade" id="importModal" tabindex="-1"><div class="modal-dialog"><div class="modal-content">
+  <div class="modal-header"><h5 class="modal-title">Import CSV</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+  <form method="post" action="{{ url_for('core.transactions_import') }}" enctype="multipart/form-data">
+    <div class="modal-body">
+      <p class="text-muted small">Columns required: date, description, amount, type (income/expense), category</p>
+      <input type="file" name="csvfile" accept=".csv" class="form-control" required>
+    </div>
+    <div class="modal-footer"><button class="btn btn-primary">Import</button></div>
+  </form>
+</div></div></div>
+{% endblock %}

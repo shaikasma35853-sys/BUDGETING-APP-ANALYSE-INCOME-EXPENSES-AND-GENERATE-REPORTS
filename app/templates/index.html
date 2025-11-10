@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row g-3">
+  <div class="col-md-4"><div class="card card-metric shadow-sm"><div class="card-body">
+    <div class="d-flex align-items-center justify-content-between"><h6 class="text-muted mb-0">Total Income</h6><i class="bi bi-graph-up"></i></div>
+    <h2 class="mb-0 fw-bold mt-2">₹ {{ total_income }}</h2></div></div></div>
+  <div class="col-md-4"><div class="card card-metric shadow-sm"><div class="card-body">
+    <div class="d-flex align-items-center justify-content-between"><h6 class="text-muted mb-0">Total Expense</h6><i class="bi bi-cash-coin"></i></div>
+    <h2 class="mb-0 fw-bold mt-2">₹ {{ total_expense }}</h2></div></div></div>
+  <div class="col-md-4"><div class="card card-metric shadow-sm"><div class="card-body">
+    <div class="d-flex align-items-center justify-content-between"><h6 class="text-muted mb-0">Balance</h6><i class="bi bi-wallet2"></i></div>
+    <h2 class="mb-0 fw-bold mt-2">₹ {{ balance }}</h2></div></div></div>
+</div>
+
+{% if alerts %}
+<div class="alert alert-warning mt-3 shadow-sm">
+  <strong>Heads up:</strong> You're nearing these budgets this month:
+  <ul class="mb-0">{% for a in alerts %}<li><strong>{{ a.category }}</strong>: Spent ₹{{ a.spent }} / Budget ₹{{ a.budget }}</li>{% endfor %}</ul>
+</div>
+{% endif %}
+
+<div class="row mt-3 g-3">
+  <div class="col-lg-6"><div class="card shadow-sm"><div class="card-header fw-semibold">Income vs Expense by Month</div><div class="card-body"><div id="ixeChart"></div></div></div></div>
+  <div class="col-lg-6"><div class="card shadow-sm"><div class="card-header fw-semibold">Net Cashflow by Month</div><div class="card-body"><div id="tsChart"></div></div></div></div>
+</div>
+
+<div class="row mt-3 g-3">
+  <div class="col-lg-6"><div class="card shadow-sm"><div class="card-header fw-semibold">This Month — Expense by Category</div><div class="card-body"><div id="cmCatChart"></div></div></div></div>
+  <div class="col-lg-6"><div class="card shadow-sm"><div class="card-header fw-semibold">Cumulative Spend vs Budget (This Month)</div><div class="card-body"><div id="cumChart"></div></div></div></div>
+</div>
+
+<div class="row mt-3 g-3">
+  <div class="col-12"><div class="card shadow-sm"><div class="card-header d-flex justify-content-between align-items-center">
+    <span class="fw-semibold">Budget Progress by Category (This Month)</span>
+  </div><div class="card-body"><div id="budgetProgress"></div></div></div></div>
+</div>
+
+<script>
+fetch("{{ url_for('core.data_summary') }}").then(r=>r.json()).then(d=>renderDashboard(d));
+</script>
+{% endblock %}

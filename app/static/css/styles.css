@@ -1,0 +1,11 @@
+:root { --bg: #f6f8fb; --card-left: #0d6efd; }
+body { background: var(--bg); }
+.navbar { background: linear-gradient(90deg, #0d6efd, #6610f2); }
+.card-metric { border-left: 4px solid var(--card-left); }
+.card { border-radius: 0.85rem; }
+.badge { font-weight: 500; }
+.dark body { background: #0f1115; }
+.dark .navbar { background: linear-gradient(90deg, #141824, #2a2f45); }
+.dark .card { background: #161a25; color: #e9ecf1; }
+.dark .table { color: #e9ecf1; }
+.dark .table thead { background: #1e2332; }
